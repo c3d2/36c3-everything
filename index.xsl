@@ -20,6 +20,18 @@
       <body>
         <xsl:apply-templates select="conference/title"/>
         <xsl:apply-templates select="day"/>
+
+        <script>
+          function clickEvent(el) {
+          console.log('toggle', el.classList);
+            el.classList.toggle('expand');
+          }
+          for(var el of document.getElementsByTagName('article')) {
+            (function(el) {
+              el.onclick = clickEvent.bind(this, el);
+            })(el);
+          }
+        </script>
       </body>
     </html>
   </xsl:template>
@@ -53,7 +65,12 @@
   </xsl:template>
 
   <xsl:template match="event">
-    <article class="{str:replace(str:replace(room, ' ', '_'), '.', '')}">
+    <xsl:variable name="expandable">
+      <xsl:if test="abstract and string-length(abstract) &gt; 0">
+        expandable
+      </xsl:if>
+    </xsl:variable>
+    <article class="{str:replace(str:replace(room, ' ', '_'), '.', '')} {$expandable}">
       <div class="meta">
         <p class="time">
           <xsl:value-of select="start"/>
@@ -75,6 +92,9 @@
           <xsl:value-of select="subtitle"/>
         </h4>
       </xsl:if>
+      <p class="abstract">
+        <xsl:value-of select="abstract"/>
+      </p>
       
       <ul class="speakers">
         <xsl:apply-templates select="persons"/>

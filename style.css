@@ -111,3 +111,17 @@ h4 {
     display: block;
     height: 3em;
 }
+
+article.expandable {
+    cursor: pointer;
+}
+article .abstract {
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height 0.3s ease-in;
+    font-size: 70%;
+}
+article.expand .abstract {
+    max-height: 523px;
+    transition: max-height 0.7s ease-out;
+}
