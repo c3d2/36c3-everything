@@ -1,4 +1,7 @@
-index.html: index.xsl everything.schedule.xml speakers.xml
+index.html: index.unhyphenated.html
+	sed -f hyphenate.sed < $< > $@
+
+index.unhyphenated.html: index.xsl everything.schedule.xml speakers.xml
 	xsltproc $< everything.schedule.xml > $@
 
 everything.schedule.xml:
