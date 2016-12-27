@@ -100,6 +100,8 @@
       </div>
       <p class="abstract">
         <xsl:value-of select="abstract"/>
+        <xsl:text>&#10;</xsl:text>
+        <xsl:value-of select="description"/>
       </p>
       
       <ul class="speakers">
