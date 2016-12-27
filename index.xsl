@@ -83,15 +83,21 @@
           <xsl:value-of select="room"/>
         </p>
       </div>
-      
-      <h3>
-        <xsl:value-of select="title"/>
-      </h3>
-      <xsl:if test="subtitle and string-length(subtitle) &gt; 0">
-        <h4>
-          <xsl:value-of select="subtitle"/>
-        </h4>
-      </xsl:if>
+
+      <div class="header">
+        <xsl:if test="logo and string-length(logo) &gt; 0">
+          <img class="logo"
+               src="https://fahrplan.events.ccc.de/congress/2016/Fahrplan{logo}"/>
+        </xsl:if>
+        <h3>
+          <xsl:value-of select="title"/>
+        </h3>
+        <xsl:if test="subtitle and string-length(subtitle) &gt; 0">
+          <h4>
+            <xsl:value-of select="subtitle"/>
+          </h4>
+        </xsl:if>
+      </div>
       <p class="abstract">
         <xsl:value-of select="abstract"/>
       </p>

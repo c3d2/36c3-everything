@@ -90,8 +90,14 @@ h4 {
     color: #333;
     margin: 0;
 }
+.logo {
+    float: right;
+    max-height: 4em;
+    padding: 0.1em 0 0 0.2em;
+}
 
 .speakers {
+    clear: right;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
