@@ -1,0 +1,84 @@
+section {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: white;
+ }
+
+article {
+    flex: 1 1 auto;
+    width: 14em;
+    background-color: #e8e8e8;
+    margin: 0.2em;
+    padding: 0.1em;
+ }
+article * {
+    padding: 0;
+    margin: 0;
+}
+
+.meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.meta .time {
+    font-size: 80%;
+    color: #555;
+}
+.meta .duration {
+    font-size: 80%;
+    color: #999;
+}
+.meta .room {
+    text-align: right;
+    font-size: 80%;
+    color: #777;
+    border-radius: 0.1em;
+    padding: 1px 2px;
+}
+.Saal_1 .room {
+    background-color: #2faf8f;
+    color: white;
+}
+.Saal_2 .room {
+    background-color: #2fafaf;
+    color: white;
+}
+.Saal_G .room {
+    background-color: #2fafcf;
+    color: white;
+}
+.Saal_6 .room {
+    background-color: #2fafdf;
+    color: white;
+}
+.Hall_C1 .room {
+    background-color: #cf9f00;
+    color: white;
+}
+.Hall_C2 .room {
+    background-color: #af9f00;
+    color: white;
+}
+.Hall_C3 .room {
+    background-color: #8f9f00;
+    color: white;
+}
+.Hall_C4 .room {
+    background-color: #6f9f00;
+    color: white;
+}
+
+h3 {
+    font-size: 100%;
+    font-weight: bold;
+    color: #111;
+    margin: 0;
+}
+h4 {
+    font-size: 80%;
+    font-weight: medium;
+    font-style: italic;
+    color: #333;
+    margin: 0;
+}
