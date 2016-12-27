@@ -82,3 +82,16 @@ h4 {
     color: #333;
     margin: 0;
 }
+
+.speakers li {
+    list-style-type: none;
+    color: #888;
+    font-size: 80%;
+}
+.speakers a {
+    text-decoration: none;
+    color: #77a;
+}
+.speakers img {
+    height: 1em;
+}

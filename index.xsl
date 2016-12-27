@@ -5,6 +5,9 @@
   xmlns:str="http://exslt.org/strings"
   exclude-result-prefixes="xsl str">
 
+  <xsl:variable name="speakers"
+                select="document('speakers.xml')/speakers/schedule_speakers/speakers"/>
+  
   <xsl:template match="schedule">
     <html>
       <head>
@@ -66,9 +69,39 @@
       <h3>
         <xsl:value-of select="title"/>
       </h3>
-      <h4>
-        <xsl:value-of select="subtitle"/>
-      </h4>
+      <xsl:if test="subtitle and string-length(subtitle) &gt; 0">
+        <h4>
+          <xsl:value-of select="subtitle"/>
+        </h4>
+      </xsl:if>
+      
+      <ul class="speakers">
+        <xsl:apply-templates select="persons"/>
+      </ul>
     </article>
+  </xsl:template>
+
+  <xsl:template match="person">
+    <xsl:variable name="id" select="@id"/>
+    <xsl:variable name="speaker" select="$speakers[string(id) = $id]"/>
+
+    <li>
+      <xsl:choose>
+        <xsl:when test="@href">
+          <a href="{@href}">
+            <xsl:value-of select="."/>
+          </a>
+        </xsl:when>
+        <xsl:when test="@id">
+          <xsl:if test="$speaker/image and not($speaker/image = 'null')">
+            <img src="https://fahrplan.events.ccc.de/congress/2016/Fahrplan{$speaker/image}"/>
+          </xsl:if>
+          <xsl:value-of select="$speaker/public_name"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="."/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </li>
   </xsl:template>
 </xsl:stylesheet>
