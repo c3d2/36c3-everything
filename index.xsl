@@ -14,7 +14,7 @@
         <title>
           <xsl:value-of select="conference/title"/>
         </title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="style.css?20161227133700" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </head>
       <body>
