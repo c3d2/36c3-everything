@@ -2,15 +2,18 @@ section {
     display: flex;
     flex-flow: row wrap;
     background-color: white;
- }
+}
 
 article {
     flex: 1 1 auto;
     width: 14em;
-    background-color: #e8e8e8;
     margin: 0.2em;
     padding: 0.1em;
- }
+    display: flex;
+    flex-direction: column;
+    background-color: #e8e8e8;
+    justify-content: space-between;
+}
 article * {
     padding: 0;
     margin: 0;
@@ -83,15 +86,23 @@ h4 {
     margin: 0;
 }
 
+.speakers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
 .speakers li {
     list-style-type: none;
     color: #888;
     font-size: 80%;
+    margin: 0.5em 0.2em 0 0.2em;
 }
 .speakers a {
     text-decoration: none;
     color: #77a;
 }
 .speakers img {
-    height: 1em;
+    display: block;
+    height: 3em;
 }
