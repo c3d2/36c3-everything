@@ -1,8 +1,9 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -e
 
 make
-git co -b gh-pages
-git rm -f .gitignore Makefile index.xsl publish.sh hyphenate.sed
+git checkout gh-pages
+git pull origin gh-pages
 git add -f index.html
-git commit -m 'publish'
-git co master
+git commit --allow-empty -m 'publish'
+git checkout master
