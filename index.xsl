@@ -85,7 +85,16 @@
           </span>
         </p>
         <p class="room">
-          <xsl:value-of select="room"/>
+          <xsl:choose>
+            <xsl:when test="starts-with(room, 'Assembly:')">
+              <i>
+                <xsl:value-of select="str:replace(room, 'Assembly:', '')"/>
+              </i>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="room"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </p>
       </div>
 
