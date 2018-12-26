@@ -139,15 +139,18 @@
   </xsl:template>
 
   <xsl:template match="person">
-    <li>
+    <xsl:variable name="name">
       <xsl:choose>
-        <xsl:when test="persons/name">
-          <xsl:value-of select="persons/name"/>
+        <xsl:when test="name">
+          <xsl:value-of select="name"/>
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="."/>
         </xsl:otherwise>
       </xsl:choose>
+    </xsl:variable>
+    <li>
+      <xsl:value-of select="$name"/>
     </li>
   </xsl:template>
 </xsl:stylesheet>
