@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-set -e
+set -x
 
 make
-git checkout gh-pages
-git pull origin gh-pages
+git branch -D gh-pages
+git checkout -b gh-pages origin/master
 git add -f index.html
-git commit --allow-empty -m 'publish'
-git checkout master
+git commit -m 'publish'
+git push -f
