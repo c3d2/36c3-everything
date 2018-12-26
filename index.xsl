@@ -29,6 +29,14 @@
             })(el);
           }
         </script>
+
+        <footer>
+          <p>
+            By <a href="http://spaceboyz.net/~astro/">Astro</a>,
+            (<a href="http://data.c3voc.de/35C3/everything.schedule.xml">data</a>,
+            <a href="https://github.com/c3d2/35c3-everything">code</a>)
+          </p>
+        </footer>
       </body>
     </html>
   </xsl:template>
