@@ -122,6 +122,7 @@ article.expandable {
     cursor: pointer;
 }
 article .abstract {
+    background-color: #eee;
     white-space: pre-wrap;
     max-height: 0;
     overflow-y: hidden;
@@ -131,6 +132,6 @@ article .abstract {
 article.expand .abstract {
     padding: 2px 4px;
     max-height: 400px;
-    overflow-y: scroll;
+    overflow-y: auto;
     transition: max-height 0.7s ease-out;
 }
