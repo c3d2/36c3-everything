@@ -7,3 +7,4 @@ git checkout -b gh-pages origin/master
 git add -f index.html
 git commit -m 'publish'
 git push -f
+git checkout master
