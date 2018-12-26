@@ -104,7 +104,21 @@
                src="https://fahrplan.events.ccc.de/congress/2018/Fahrplan{logo}"/>
         </xsl:if-->
         <h3>
-          <xsl:value-of select="title"/>
+          <xsl:choose>
+            <xsl:when test="url">
+              <a href="{url}">
+                <xsl:value-of select="title"/>
+              </a>
+            </xsl:when>
+            <xsl:when test="links/link">
+              <a href="{links/link[last()]}">
+                <xsl:value-of select="title"/>
+              </a>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="title"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </h3>
         <xsl:if test="subtitle and string-length(subtitle) &gt; 0">
           <h4>
