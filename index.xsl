@@ -32,9 +32,9 @@
 
         <footer>
           <p>
-            By <a href="http://spaceboyz.net/~astro/">Astro</a>,
-            (<a href="http://data.c3voc.de/35C3/everything.schedule.xml">data</a>,
-            <a href="https://github.com/c3d2/35c3-everything">code</a>)
+            By <a href="https://spaceboyz.net/~astro/">Astro</a>,
+            (<a href="https://github.com/voc/36C3_schedule">data</a>,
+            <a href="https://github.com/c3d2/36c3-everything">code</a>)
           </p>
         </footer>
       </body>
@@ -101,7 +101,7 @@
       <div class="header">
         <!--xsl:if test="logo and string-length(logo) &gt; 0">
           <img class="logo"
-               src="https://fahrplan.events.ccc.de/congress/2018/Fahrplan{logo}"/>
+               src="{base_url}{logo}"/>
         </xsl:if-->
         <h3>
           <xsl:choose>
