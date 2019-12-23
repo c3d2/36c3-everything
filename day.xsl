@@ -20,7 +20,7 @@
         <xsl:apply-templates select="conference/title"/>
         <xsl:apply-templates select="day[@index=$day]"/>
 
-        <script>
+        <script type="text/javascript">
           function clickEvent(el) {
           console.log('toggle', el.classList);
             el.classList.toggle('expand');
