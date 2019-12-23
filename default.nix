@@ -17,6 +17,6 @@ stdenv.mkDerivation {
   '';
   installPhase = ''
     mkdir $out
-    cp -v ?.html $out/
+    cp -v *.{html,css} $out/
   '';
 }
