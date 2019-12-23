@@ -24,6 +24,16 @@ article * {
     margin: 0;
     hyphens: auto;
 }
+article.time {
+    background: none;
+    justify-content: center;
+}
+article.time p {
+    text-align: center;
+    color: #999;
+    font-size: 200%;
+    font-weight: bold;
+}
 
 .meta {
     display: flex;

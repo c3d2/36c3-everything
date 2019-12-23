@@ -1,4 +1,4 @@
-everything.schedule.xml
+*.xml
 speakers.json
 speakers.xml
 ?.html

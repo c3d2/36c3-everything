@@ -54,10 +54,7 @@
     </h2>
 
     <section>
-      <xsl:for-each select="room/event">
-        <xsl:sort select="date" order="ascending"/>
-        <xsl:apply-templates select="."/>
-      </xsl:for-each>
+      <xsl:apply-templates select="event"/>
     </section>
   </xsl:template>
 
@@ -67,6 +64,15 @@
         expandable
       </xsl:if>
     </xsl:variable>
+
+    <xsl:if test="start != preceding-sibling::*[1]/start">
+      <article class="time">
+        <p>
+          <xsl:value-of select="start"/>
+        </p>
+      </article>
+    </xsl:if>
+
     <article class="{str:replace(str:replace(room, ' ', '_'), '.', '')} {$expandable}"
              lang="{language}">
       <div class="meta">
