@@ -5,6 +5,8 @@
   xmlns:str="http://exslt.org/strings"
   exclude-result-prefixes="xsl str">
 
+  <xsl:param name="day"/>
+
   <xsl:template match="schedule">
     <html>
       <head>
@@ -16,7 +18,7 @@
       </head>
       <body>
         <xsl:apply-templates select="conference/title"/>
-        <xsl:apply-templates select="day"/>
+        <xsl:apply-templates select="day[@index=$day]"/>
 
         <script>
           function clickEvent(el) {
@@ -43,16 +45,6 @@
 
   <xsl:template match="conference/title">
     <h1><xsl:value-of select="."/></h1>
-
-    <p class="toc">
-      Jump to day
-      <xsl:for-each select="/schedule/day">
-        <xsl:text> </xsl:text>
-        <a href="#day{@index}">
-          <xsl:value-of select="@index"/>
-        </a>
-      </xsl:for-each>
-    </p>
   </xsl:template>
 
   <xsl:template match="schedule/day">
