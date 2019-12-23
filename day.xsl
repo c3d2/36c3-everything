@@ -7,10 +7,13 @@
 
   <xsl:param name="day"/>
 
+  <xsl:output method="html"/>
+
   <xsl:template match="schedule">
     <html>
       <head>
         <title>
+          Day <xsl:value-of select="$day"/> -
           <xsl:value-of select="conference/title"/>
         </title>
         <link rel="stylesheet" type="text/css" href="style.css?20161227133700" />
