@@ -7,7 +7,7 @@
 with pkgs;
 
 stdenv.mkDerivation {
-  name = "env";
+  name = "36c3-everything";
   buildInputs = [
     libxslt
   ];
