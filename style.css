@@ -22,6 +22,7 @@ article {
 article * {
     padding: 0;
     margin: 0;
+    hyphens: auto;
 }
 
 .meta {

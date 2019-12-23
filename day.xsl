@@ -67,7 +67,8 @@
         expandable
       </xsl:if>
     </xsl:variable>
-    <article class="{str:replace(str:replace(room, ' ', '_'), '.', '')} {$expandable}">
+    <article class="{str:replace(str:replace(room, ' ', '_'), '.', '')} {$expandable}"
+             lang="{language}">
       <div class="meta">
         <p class="time">
           <xsl:value-of select="start"/>
